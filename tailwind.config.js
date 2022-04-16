@@ -10,7 +10,7 @@ module.exports = {
       },
       spacing: {
         '600px': '600px',
-      }
+      },
     },
   },
   plugins: [],

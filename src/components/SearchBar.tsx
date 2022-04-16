@@ -1,17 +1,49 @@
-import React from 'react'
+import React from "react"
+import {useEffect, useState} from 'react'
+import { Search32, MisuseOutline32 } from '@carbon/icons-react'
 
-function SearchBar() {
+
+const API_KEY = process.env.REACT_APP_API_KEY
+
+
+function SearchBar(props:any) {
+
+
+    // geocoding api request to get Latitude and Longitude
+    useEffect(() => {
+        fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${props.inputCity}&limit=5&appid=${API_KEY}`)
+            .then(resp => resp.json())
+            .then(data => {
+                props.setApiData(data)
+            })
+    }, [props.inputCity])
+
+    console.log(props.inputCity)
+
+    const handleChange = (event:any) => {
+        props.setInputCity(event.target.value)
+    }
+
+    const clearInput = () => {
+        props.setInputCity('')
+    }
+
+
     return (
-        <div className="bg-searchBar-gray w-1/4 h-600px flex">
-            <form action="" className="border-solid border-2 h-24 ml-2 mt-2 w-11/12">
-                <h3 className="font-medium text-2xl mb-2 ml-2 mt-2">Search for a City</h3>
-                <input type="text" name="city" id="" className="rounded-md ml-2 mr-2 p-1"/>
-                <button className="bg-blue-600 border-blue-600 text-center align-middle rounded-lg px-2 py-2 hover:bg-blue-800 text-white">Search</button>
-            </form>
+        <div className="flex items-center w-full flex-col">
+            <div className="flex mt-5">
+                <input type="text" placeholder="Enter city name..." onChange={handleChange} autoComplete="off" className="w-64 h-12 p-2 focus:outline-none" value={props.inputCity} name='inputCity' />
+                {props.inputCity.length === 0 ? <Search32 className="text-black h-12 pr-1 bg-white cursor-pointer"/> : <MisuseOutline32 className="text-black h-12 pr-1 bg-white cursor-pointer" onClick={clearInput} />}
+            </div>
+            <div className="mt-1">
+                    {props.apiData.length > 0 && props.apiData.map((item: { [x: string]: string | number | boolean | {} | React.ReactElement<any, string | React.JSXElementConstructor<any>> | React.ReactNodeArray | React.ReactPortal | null | undefined }) => <a href=""><div className="bg-white w-72 p-2 hover:bg-gray-300">{item['name']}    {item['state']}</div></a>)}
+
+            </div>
+
+
 
         </div>
     )
 }
-
 
 export default SearchBar

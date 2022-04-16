@@ -3,12 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@carbon/icons-react": "10.22.0",
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
+    "@mui/material": "^5.6.1",
     "@types/node": "16.11.7",
     "@types/react": "17.0.30",
     "@types/react-dom": "17.0.9",
     "@typescript-eslint/eslint-plugin": "~5.10.0",
     "@typescript-eslint/parser": "~5.10.0",
     "babel-jest": "27.2.3",
+    "carbon-components": "10.25.0",
+    "carbon-components-react": "7.25.0",
+    "carbon-icons": "7.0.7",
     "core-js": "^3.6.5",
     "cypress": "^9.1.0",
     "eslint": "~8.7.0",
@@ -62,5 +69,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/carbon__icons-react": "^10.31.2"
   }
 }

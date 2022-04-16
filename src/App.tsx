@@ -1,12 +1,12 @@
 import React from 'react';
 import Header from '././components/Header'
-import SearchBar from './components/SearchBar'
+import AppWindow from './components/AppWindow';
 
 function App() {
   return (
     <div>
       <Header />
-      <SearchBar />
+      <AppWindow />
     </div>
   )
 }
