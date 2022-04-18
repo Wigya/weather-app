@@ -1,13 +1,19 @@
-import { Api_116 } from '@carbon/icons-react'
 import React from 'react'
 import {useEffect, useState} from 'react'
 import SearchBar from './SearchBar'
 
+type props = {
+    inputCity: string, 
+    setInputCity: React.Dispatch<React.SetStateAction<string>>, 
+    apiData: Array<object>, 
+    setApiData: React.Dispatch<React.SetStateAction<Array<any>>>,
+    setLatitudeLongitude: React.Dispatch<React.SetStateAction<Array<string>>>
+}
 
-function SearchSection(props: any) {
+function SearchSection({inputCity, setInputCity, apiData, setApiData, setLatitudeLongitude} : props) {
     return (
         <div className="bg-searchBar-gray w-1/4 h-600px flex">
-            <SearchBar inputCity={props.inputCity} setInputCity={props.setInputCity} apiData={props.apiData} setApiData={props.setApiData} />
+            <SearchBar {...{inputCity, setInputCity, apiData, setApiData, setLatitudeLongitude}}/>
         </div>
     )
 }
