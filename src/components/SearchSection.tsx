@@ -5,7 +5,7 @@ import SearchBar from './SearchBar'
 type props = {
     inputCity: string, 
     setInputCity: React.Dispatch<React.SetStateAction<string>>, 
-    apiData: Array<object>, 
+    apiData: Array<object>,
     setApiData: React.Dispatch<React.SetStateAction<Array<any>>>,
     setLatitudeLongitude: React.Dispatch<React.SetStateAction<Array<string>>>
 }

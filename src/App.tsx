@@ -4,7 +4,7 @@ import AppWindow from './components/AppWindow';
 
 function App() {
   return (
-    <div>
+    <div className="overflow-x-hidden">
       <Header />
       <AppWindow />
     </div>

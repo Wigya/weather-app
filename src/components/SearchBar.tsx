@@ -45,9 +45,6 @@ function SearchBar({inputCity, setInputCity, apiData, setApiData, setLatitudeLon
                     {apiData.length > 0 && apiData.map((item) => <a href="#"><div className="bg-white w-72 p-2 hover:bg-gray-300" onClick={() => setLatitudeLongitude([item['lat'], item['lon']])}>{item['name']}    {item['state']}</div></a>)}
 
             </div>
-
-
-
         </div>
     )
 }
