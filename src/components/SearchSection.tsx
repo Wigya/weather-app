@@ -1,22 +1,17 @@
-import React from 'react'
-import {useEffect, useState} from 'react'
-import SearchBar from './SearchBar'
+import React, { ReactElement } from "react";
+import { useEffect, useState } from "react";
+import SearchBar from "./SearchBar";
 
 type props = {
-    inputCity: string, 
-    setInputCity: React.Dispatch<React.SetStateAction<string>>, 
-    apiData: Array<object>,
-    setApiData: React.Dispatch<React.SetStateAction<Array<any>>>,
-    setLatitudeLongitude: React.Dispatch<React.SetStateAction<Array<string>>>
+  children: ReactElement;
+};
+
+function SearchSection({ children }: props) {
+  return (
+    <div className="bg-searchBar-gray min-w-[300px] w-1/4 min-h-600px h-600px flex">
+      {children}
+    </div>
+  );
 }
 
-function SearchSection({inputCity, setInputCity, apiData, setApiData, setLatitudeLongitude} : props) {
-    return (
-        <div className="bg-searchBar-gray w-1/4 h-600px flex">
-            <SearchBar {...{inputCity, setInputCity, apiData, setApiData, setLatitudeLongitude}}/>
-        </div>
-    )
-}
-
-
-export default SearchSection
+export default SearchSection;
