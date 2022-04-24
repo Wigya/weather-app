@@ -20,3 +20,6 @@ The website displays **6-day forecast** based on the City you provide in the **S
   * `npm install`
 * **Run The Project**
   * `npm run`
+
+# How does the website look like?
+![weather-app](https://user-images.githubusercontent.com/59150755/164988697-8874849e-50e8-43ee-8740-73c608b35b48.gif)
