@@ -5,13 +5,6 @@ type props = {
     renderElement: boolean
 }
 
-enum photos {
-    very_cloudly = "/images/very_cloudly.png",
-    cloudly = "/images/cloudly.png",
-    half_sunny = "/images/half-sunny.png",
-    sunny = "/images/sunny.png",
-}
-
 function CurrentForeCast({weatherData, renderElement} : props) {
     
     return (
