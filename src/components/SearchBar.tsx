@@ -1,8 +1,13 @@
 import React from "react";
+<<<<<<< HEAD
 import { useEffect, useRef } from "react";
 import { Search32, MisuseOutline32 } from "@carbon/icons-react";
 import InputControlled from "./Input/InputControlled";
 import { createRef } from "react";
+=======
+import { useEffect } from "react";
+import { Search32, MisuseOutline32 } from "@carbon/icons-react";
+>>>>>>> 243ec292ceb7316398ad241438feda1c435f30ce
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 
@@ -23,6 +28,7 @@ function SearchBar({
 }: props) {
   // geocoding api request to get the longtitude and latitude
   useEffect(() => {
+<<<<<<< HEAD
     fetch(
       `http://api.openweathermap.org/geo/1.0/direct?q=${inputCity}&limit=5&appid=${API_KEY}`
     )
@@ -30,6 +36,17 @@ function SearchBar({
       .then((data) => {
         setApiData(data);
       });
+=======
+    if (inputCity.length !== 0) {
+      fetch(
+        `http://api.openweathermap.org/geo/1.0/direct?q=${inputCity}&limit=5&appid=${API_KEY}`
+      )
+        .then((resp) => resp.json())
+        .then((data) => {
+          setApiData(data);
+        });
+    }
+>>>>>>> 243ec292ceb7316398ad241438feda1c435f30ce
   }, [inputCity]);
 
   const handleChange = (event: any) => {
@@ -37,6 +54,7 @@ function SearchBar({
   };
 
   const clearInput = () => {
+<<<<<<< HEAD
     localRef.current.value = "";
     setInputCity("");
   };
@@ -52,6 +70,22 @@ function SearchBar({
           placeHolder="Enter city name..."
           value={inputCity}
           ref={localRef}
+=======
+    setInputCity("");
+  };
+
+  return (
+    <div className="flex items-center w-full flex-col">
+      <div className="flex mt-5">
+        <input
+          type="text"
+          placeholder="Enter city name..."
+          onChange={handleChange}
+          autoComplete="off"
+          className="w-64 h-12 p-2 focus:outline-none"
+          value={inputCity}
+          name="inputCity"
+>>>>>>> 243ec292ceb7316398ad241438feda1c435f30ce
         />
         {inputCity.length === 0 ? (
           <Search32 className="text-black h-12 pr-1 bg-white cursor-pointer" />
@@ -63,7 +97,11 @@ function SearchBar({
         )}
       </div>
       <div className="mt-1">
+<<<<<<< HEAD
         {apiData.length > 0 &&
+=======
+        {!!(apiData.length > 0 && inputCity.length) &&
+>>>>>>> 243ec292ceb7316398ad241438feda1c435f30ce
           apiData.map((item) => (
             <a href="#">
               <div

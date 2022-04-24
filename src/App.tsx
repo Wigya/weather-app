@@ -1,14 +1,14 @@
-import React from 'react';
-import Header from '././components/Header'
-import AppWindow from './components/AppWindow';
+import React from "react";
+import Header from "././components/Header";
+import AppWindow from "./components/AppWindow";
 
 function App() {
   return (
-    <div className="overflow-x-hidden">
+    <div className="">
       <Header />
       <AppWindow />
     </div>
-  )
+  );
 }
 
 export default App;
