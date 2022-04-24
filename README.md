@@ -9,8 +9,8 @@ The website displays **6-day forecast** based on the City you provide in the **S
 
 # Challenges I Faced
 * Working with **external REST API**
-* Integrate the **Searching Bar** with **API**
-* Making form related fields with **reusable components**
+* Integrating the **Searching Bar** with **API**
+* Making the form related fields with **reusable components**
 
 # How To Install And Run The Project
 * First clone the repository
