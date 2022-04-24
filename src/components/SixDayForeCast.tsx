@@ -11,11 +11,7 @@ function FiveDayForeCast({ weatherData, renderElement }: props) {
     let foreCastCards: any = [];
     let i = 0;
     weatherData.list.slice(6).map((item: any) => {
-<<<<<<< HEAD
-      if (i % 6 == 0) {
-=======
       if (i % 6 === 0) {
->>>>>>> 243ec292ceb7316398ad241438feda1c435f30ce
         let date = item.dt_txt.slice(0, 10);
         let icon = item.weather[0].icon;
         let temp = item.main.temp;

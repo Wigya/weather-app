@@ -23,11 +23,7 @@ function ForeCastWindow({ LatitudeLongitude }: props) {
       });
   }, [LatitudeLongitude]);
 
-<<<<<<< HEAD
-  // const d = weatherData.list[0].main.temp
   console.log(weatherData);
-=======
->>>>>>> 243ec292ceb7316398ad241438feda1c435f30ce
   return (
     <div className="w-full">
       <CurrentForeCast {...{ weatherData, renderElement }} />
